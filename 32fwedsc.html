@@ -1,0 +1,59 @@
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	</head>
+	<body style="background-image: url(wood-texture-080.jpg);">
+	
+
+	<div>
+		<h1 style="font-size: 100px;">очки</h1> <span class="OhI" style="font-size: 100px;">0</span>
+	</div>
+
+	<div>
+		<h1 style="font-size: 100px;">жуки</h1> <span class="OhIZikE" style="font-size: 100px;">0</span>
+	</div>
+
+	<script type="text/javascript">
+	
+	let ohi = 0;
+	let ohizike = 0;
+
+
+	let interv= function(){
+		let newImg = document.createElement('img');
+		document.body.appendChild(newImg);
+
+		let rand = Math.random()*1500 
+		let round = Math.round(rand)
+		let randT = Math.random()*1000 
+		let roundT = Math.round(randT)
+
+		let OHI = document.querySelector('.OhI');
+		let OHIZUKI = document.querySelector('.OhIZikE');
+
+		newImg.style.position = "absolute";
+		newImg.src = "img.svg";
+		newImg.style.height = "100px";
+		newImg.style.width = "100px";
+		newImg.style.marginLeft = round + "px";
+		newImg.style.marginTop = roundT + "px";
+		ohizike = ohizike + 1;
+		OHIZUKI.innerHTML = ohizike;
+
+		newImg.onclick = function(){
+			newImg.style.display = "none"
+			ohi = ohi + 1;
+			ohizike = ohizike - 1;
+			OHI.innerHTML = ohi;
+		}
+	}
+
+	setInterval(interv,1000)
+
+
+	</script>
+	</body>
+	</html>
+	
